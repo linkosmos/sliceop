@@ -153,3 +153,20 @@ func TestSelect(t *testing.T) {
 		assert.Equal(t, test.expected, got)
 	}
 }
+
+var uniqueTests = []struct {
+	input    []string
+	expected []string
+}{
+	{[]string{"A", "b", "b", "b", "c"}, []string{"A", "b", "c"}},
+	{[]string{"A", "1"}, []string{"A", "1"}},
+	{[]string{}, []string{}},
+}
+
+func TestUnique(t *testing.T) {
+	for _, test := range uniqueTests {
+		got := Unique(test.input...)
+
+		assert.Equal(t, test.expected, got)
+	}
+}

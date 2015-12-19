@@ -15,6 +15,7 @@ Works well in combination with https://github.com/linkosmos/mapop
  - NotIncludes(input []string, key string) bool
  - Reject(input []string, toReject ...string) (output []string)
  - Select(input []string, toSelect ...string) (output []string)
+ - Unique(input ...string) []string
 
 ### License
 
