@@ -73,3 +73,21 @@ func Unique(input ...string) (output []string) {
 	}
 	return output
 }
+
+// Intersection - finds matching values of both input types
+func Intersection(u1, u2 []string) (output []string) {
+	if len(u1) > len(u2) {
+		for _, t := range u1 {
+			if Includes(u2, t) {
+				output = append(output, t)
+			}
+		}
+	} else {
+		for _, t := range u2 {
+			if Includes(u1, t) {
+				output = append(output, t)
+			}
+		}
+	}
+	return output
+}

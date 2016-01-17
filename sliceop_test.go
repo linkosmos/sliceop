@@ -170,3 +170,52 @@ func TestUnique(t *testing.T) {
 		assert.Equal(t, test.expected, got)
 	}
 }
+
+var intersectionTests = []struct {
+	u1       []string
+	u2       []string
+	expected []string
+}{
+	{
+		[]string{"a", "b1", "1"},
+		[]string{"b1", "1"},
+		[]string{"b1", "1"},
+	},
+	{
+		[]string{"b2", "1"},
+		[]string{"a", "b2", "1"},
+		[]string{"b2", "1"},
+	},
+	{
+		[]string{},
+		[]string{"a3", "1"},
+		nil,
+	},
+	{
+		[]string{"1"},
+		[]string{"2"},
+		nil,
+	},
+	{
+		[]string{"a4", "1"},
+		[]string{},
+		nil,
+	},
+	{
+		[]string{},
+		[]string{},
+		nil,
+	},
+	{
+		nil,
+		nil,
+		nil,
+	},
+}
+
+func TestIntersection(t *testing.T) {
+	for _, test := range intersectionTests {
+		got := Intersection(test.u1, test.u2)
+		assert.Equal(t, test.expected, got)
+	}
+}

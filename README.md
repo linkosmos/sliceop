@@ -16,6 +16,7 @@ Works well in combination with https://github.com/linkosmos/mapop
  - Reject(input []string, toReject ...string) (output []string)
  - Select(input []string, toSelect ...string) (output []string)
  - Unique(input ...string) (output []string)
+ - Intersection(u1, u2 []string) (output []string)
 
 ### License
 
