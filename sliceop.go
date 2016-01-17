@@ -62,11 +62,10 @@ func Select(input []string, toSelect ...string) (output []string) {
 }
 
 // Unique - returns unique values for given input
-func Unique(input ...string) []string {
+func Unique(input ...string) (output []string) {
 	if len(input) == 0 {
 		return input
 	}
-	var output []string
 	for _, key := range input {
 		if NotIncludes(output, key) {
 			output = append(output, key)
