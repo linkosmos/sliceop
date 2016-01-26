@@ -17,6 +17,7 @@ Works well in combination with https://github.com/linkosmos/mapop
  - Select(input []string, toSelect ...string) (output []string)
  - Unique(input ...string) (output []string)
  - Intersection(u1, u2 []string) (output []string)
+ - CountFunc(f func(input string) bool, input ...string) (sum int)
 
 ### License
 

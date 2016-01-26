@@ -65,7 +65,7 @@ func TestIncludes(t *testing.T) {
 		got := Includes(test.input, test.key)
 
 		assert.Equal(t, test.expected, got,
-			fmt.Sprintf("Expected %b for %v", test.expected, test.input))
+			fmt.Sprintf("Expected %t for %v", test.expected, test.input))
 	}
 }
 
@@ -85,7 +85,7 @@ func TestNotIncludes(t *testing.T) {
 		got := NotIncludes(test.input, test.key)
 
 		assert.Equal(t, test.expected, got,
-			fmt.Sprintf("Expected %b for %v", test.expected, test.input))
+			fmt.Sprintf("Expected %t for %v", test.expected, test.input))
 	}
 }
 
@@ -216,6 +216,47 @@ var intersectionTests = []struct {
 func TestIntersection(t *testing.T) {
 	for _, test := range intersectionTests {
 		got := Intersection(test.u1, test.u2)
+		assert.Equal(t, test.expected, got)
+	}
+}
+
+var countFuncTests = []struct {
+	input    []string
+	f        func(string) bool
+	expected int
+}{
+	{
+		[]string{"some", "key", "gone", "here"},
+		func(key string) bool {
+			return key == "some"
+		},
+		1,
+	},
+	{
+		[]string{"some", "some", "some", "some"},
+		func(key string) bool {
+			return key == "some"
+		},
+		4,
+	},
+	{
+		[]string{"some", "some", "some", "some"},
+		func(key string) bool {
+			return false
+		},
+		0,
+	},
+	{
+		nil,
+		nil,
+		0,
+	},
+}
+
+func TestCountFunc(t *testing.T) {
+	for _, test := range countFuncTests {
+		got := CountFunc(test.f, test.input...)
+
 		assert.Equal(t, test.expected, got)
 	}
 }

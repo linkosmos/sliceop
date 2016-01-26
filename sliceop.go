@@ -91,3 +91,13 @@ func Intersection(u1, u2 []string) (output []string) {
 	}
 	return output
 }
+
+// CountFunc - counts the number of elements yielding a true value.
+func CountFunc(f func(input string) bool, input ...string) (sum int) {
+	for _, key := range input {
+		if f(key) {
+			sum++
+		}
+	}
+	return sum
+}
