@@ -6,6 +6,7 @@ Works well in combination with https://github.com/linkosmos/mapop
 
 [![Build Status](https://travis-ci.org/linkosmos/sliceop.svg?branch=master)](https://travis-ci.org/linkosmos/sliceop)
 [![GoDoc](http://godoc.org/github.com/linkosmos/sliceop?status.svg)](http://godoc.org/github.com/linkosmos/sliceop)
+[![Go Report Card](http://goreportcard.com/badge/linkosmos/sliceop)](http://goreportcard.com/report/linkosmos/sliceop)
 [![BSD License](http://img.shields.io/badge/license-BSD-blue.svg)](http://opensource.org/licenses/BSD-3-Clause)
 
 ### Methods
