@@ -101,3 +101,13 @@ func CountFunc(f func(input string) bool, input ...string) (sum int) {
 	}
 	return sum
 }
+
+// Compact - removes empty values from given array
+func Compact(input ...string) (output []string) {
+	for _, key := range input {
+		if key != "" {
+			output = append(output, key)
+		}
+	}
+	return output
+}

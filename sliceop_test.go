@@ -260,3 +260,26 @@ func TestCountFunc(t *testing.T) {
 		assert.Equal(t, test.expected, got)
 	}
 }
+
+var compactTests = []struct {
+	input    []string
+	expected []string
+}{
+	{
+		[]string{"some", "", "", "here"},
+		[]string{"some", "here"},
+	},
+	{
+		[]string{},
+		nil,
+	},
+}
+
+func TestCompact(t *testing.T) {
+	for _, test := range compactTests {
+		got := Compact(test.input...)
+
+		assert.Len(t, got, len(test.expected))
+		assert.Equal(t, test.expected, got)
+	}
+}

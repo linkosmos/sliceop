@@ -20,6 +20,7 @@ Works well in combination with https://github.com/linkosmos/mapop
  - Unique(input ...string) (output []string)
  - Intersection(u1, u2 []string) (output []string)
  - CountFunc(f func(input string) bool, input ...string) (sum int)
+ - Compact(input ...string) (output []string)
 
 ### License
 
